@@ -1,6 +1,8 @@
 import { supabase } from '../../../lib/supabase';
 import { entryOut, entryIn } from '../../../lib/map';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const { data, error } = await supabase.from('entries').select('*');
   if (error) return Response.json({ error: error.message }, { status: 500 });
